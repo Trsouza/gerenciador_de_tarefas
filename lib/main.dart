@@ -6,6 +6,7 @@ import 'package:path_provider/path_provider.dart';
 void main() => runApp(MaterialApp(
       home: TelaPrincipal(),
       title: "Tarefas", // esse título não é visível na aplicação
+      debugShowCheckedModeBanner: false,
     ));
 
 class TelaPrincipal extends StatefulWidget {
@@ -86,7 +87,16 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
         backgroundColor: Colors.redAccent,
         centerTitle: true,
       ),
-      body: Column(
+      body: Container(
+          decoration: new BoxDecoration(
+            gradient: new LinearGradient(colors: [const Color(0xFF00c3ff),const Color(0xFFffff1c)],
+                begin: FractionalOffset.topLeft,
+                end: FractionalOffset.bottomRight,
+                //stops: [0.0,1.0],
+               // tileMode: TileMode.clamp
+            ),
+          ),
+          child:  Column(
         children: <Widget>[
           Container(
             padding: EdgeInsets.fromLTRB(17.0, 1.0, 7.0, 1.0),
@@ -119,6 +129,13 @@ class _TelaPrincipalState extends State<TelaPrincipal> {
           ))
         ],
       ),
+        ),
+      
+      
+      
+      
+      
+      
     );
   }
 
